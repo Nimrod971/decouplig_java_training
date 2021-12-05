@@ -32,12 +32,10 @@ public class Simulation {
         } else {
             if (numb < numberToGuess) {
                 player.respond(true);
-                logger.log("Le nombre " + numb + " est trop petit.");
                 logger.log("\n");
 
             } else {
-                player.respond(true);
-                logger.log("Le nombre " + numb + " est trop grand.");
+                player.respond(false);
                 logger.log("\n");
             }
         }
@@ -46,25 +44,21 @@ public class Simulation {
 
 
 
-    public void loopUntilPlayerSucceed(int RoundMax) {
+    public void loopUntilPlayerSucceed(long RoundMax) {
         //TODO implement me
 
         long temps = System.currentTimeMillis();
-        int round = 1;
+        long round = 1;
         boolean stop = this.nextRound();
         while ((!stop) && (round < RoundMax)) {
-            int RoundRestant=RoundMax-round;
+            long RoundRestant=RoundMax-round;
             logger.log("IL VOUS RESTE  " + RoundRestant + " ESSAIES.");
             stop = this.nextRound();
             round++;
-
-
-
-
         }
         long duree = System.currentTimeMillis() - temps;
-        if(stop) logger.log("Le joueur a trouvé la solution "+numberToGuess+" avant la limite d'essaies ( "+round+" essaies)");
-        else logger.log("Le joueur n' a pas trouvé la solution "+numberToGuess+" avant d'atteindre la limite d'essaies ( "+RoundMax+" essaies)");
+        if(stop) logger.log("win \nLe joueur a trouvé la solution "+numberToGuess+" avant la limite d'essaies ( "+round+" essaies)");
+        else logger.log("lost \nLe joueur n' a pas trouvé la solution "+numberToGuess+" avant d'atteindre la limite d'essaies ( "+RoundMax+" essaies)");
 
 
         long secondes=duree/1000;
@@ -73,6 +67,6 @@ public class Simulation {
         long minutes=secondes/60;
         secondes =  secondes%60;
 
-        logger.log("\nTEMPS REALISE : "+minutes+" minute(s), "+secondes+" seconde(s) et "+microSecondes+" milliseconde(s).");
+        logger.log("\nTEMPS REALISE : "+minutes+" m, "+secondes+" s et "+microSecondes+" ms.");
     }
 }
