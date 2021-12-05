@@ -57,7 +57,7 @@ public class Simulation {
             round++;
         }
         long duree = System.currentTimeMillis() - temps;
-        if(stop) logger.log("win \nLe joueur a trouvé la solution "+numberToGuess+" avant la limite d'essaies ( "+round+" essaies)");
+        if(stop) logger.log("win \nLe joueur a trouvé la solution "+numberToGuess+" ( en "+round+" essaies) avant la limite d'essaies ");
         else logger.log("lost \nLe joueur n' a pas trouvé la solution "+numberToGuess+" avant d'atteindre la limite d'essaies ( "+RoundMax+" essaies)");
 
 

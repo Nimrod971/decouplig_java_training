@@ -35,7 +35,7 @@ public class Launcher {
 
 
             Logger logger = LoggerFactory.getLogger("launcher");
-            logger.log("ERREUR VEILLEZ COMPETER COMVENABLEMENT LE MENU..;");
+            logger.log("ERREUR VEILLEZ COMPLETER CONVENABLEMENT LES ARGUMENTS POUR LE LANCEMENT DU PROGRAMME;");
 
 
         }
